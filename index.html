@@ -19,7 +19,7 @@
                 <h2>Payment form example</h2>
             </div>
             <div class="card-body">
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <div class="alert alert-danger alert-dismissible fade show d-none" role="alert">
                     <strong>Some fields are missing</strong>
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
@@ -119,7 +119,8 @@
                         <label for="exampleFormControlInput1" class="form-label">Message</label><br />
 
                         <div class="d-inline form-floating ">
-                            <textarea class="form-control" id="floatingTextarea2" style="height: 100px"></textarea>
+                            <textarea class="form-control" id="textingArea" style="height: 100px"></textarea>
+                            <span class="invalid-feedback error-txtArea">Error</span>
                             <div class="col">Add any notes here</div>
                         </div>
                     </div>
@@ -129,12 +130,8 @@
             <div class="p-2 gap-3 card-footer d-flex flex-row-reverse ">
                 <button type="submit" class="btn btn-primary ">Send</button>
                 <button type="reset" class="btn btn-secondary">Cancel</button>
-
-
             </div>
-
         </div>
-
     </form>
 
 

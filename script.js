@@ -38,6 +38,11 @@ form.addEventListener('submit', (evento) => {
     let daState = document.querySelector('#selectForm');
     let errState = document.querySelector('.error-state');
 
+    let daTxt = document.querySelector('#textingArea');
+    let errTxtArea = document.querySelector('.error-txtArea');
+
+    let getAlert = document.querySelector('.alert');
+
     //Validación número tarjeta
     if (crdNumber.value === '') {
         enviar = false;
@@ -128,18 +133,30 @@ form.addEventListener('submit', (evento) => {
     } else {
         daZip.classList.remove('is-invalid')
     }
-    
-    // Seleccionar Estado
-    if (daState.value === ''){
-        enviar = false;   
-        daState.classList.add('is-invalid')     
-        errState.innerHTML = "Debes seleccionar un estado";        
-    }
-    
 
+    // Seleccionar Estado
+    if (daState.value === '') {
+        enviar = false;
+        daState.classList.add('is-invalid')
+        errState.innerHTML = "Debes seleccionar un estado";
+    } else {
+        daState.classList.remove('is-invalid')
+    }
+
+    // Añadir Comentarios
+    if (daTxt.value === '') {
+        enviar = false;
+        daTxt.classList.add('is-invalid')
+        errTxtArea.innerHTML = "Debes escribir un comentario";
+    } else {
+        daTxt.classList.remove('is-invalid')
+    }
 
     if (enviar) {
         form.submit();
+    } else {
+        getAlert.classList.remove("d-none")
+        getAlert.classList.add("d-block")
     }
 
 });
